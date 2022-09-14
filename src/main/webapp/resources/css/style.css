@@ -281,3 +281,21 @@ tbody tr:hover {
   height: 25px;
   border-radius: 5px;
 }
+
+p.label {
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 1;
+  padding: 6px 8px;   		
+ }  
+
+p.label-brown {
+  color: white;
+  background-color: #C06014;
+ }
+
+p.label-green {
+  color: white;
+  background-color: #4E9F3D;
+ }
+ 

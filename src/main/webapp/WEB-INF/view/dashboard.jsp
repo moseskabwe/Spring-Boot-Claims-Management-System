@@ -7,6 +7,22 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"/>
+    	
+    	<script>
+		   window.onload = init;
+		   function init() {
+		       var elements = document.getElementsByClassName("status");
+		       for (var i = elements.length - 1; i >= 0; i--) {
+		           if (elements.item(i).innerHTML === "First Notice") {
+		               elements.item(i).setAttribute("class", "label label-brown");
+		           }
+		           else if (elements.item(i).innerHTML === "In Progress") {
+		               elements.item(i).setAttribute("class", "label label-green");
+		           }
+		       }
+		   }
+		</script>
+		
     </head>
     <body>
         <section id="sidebar">
@@ -149,7 +165,7 @@
                                         <p>${myClaim.adjuster.firstName} ${myClaim.adjuster.lastName}</p>
                                     </td>
                                     <td>
-                                        <p>${myClaim.status}</p>
+                                        <p class="status">${myClaim.status}</p>
                                     </td>
                                     <td>
                                         <p><a href="${showClaimDetails}">View</a></p>
@@ -206,7 +222,7 @@
                                     <p>${claim.adjuster.firstName} ${claim.adjuster.lastName}</p>
                                 </td>
                                 <td>
-                                    <p>${claim.status}</p>
+                                    <p class="status">${claim.status}</p>
                                 </td>
                                 <td>
                                     <p><a href="${showClaimDetails}">View</a></p>
